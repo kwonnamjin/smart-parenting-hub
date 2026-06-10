@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Parenting Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1 id="header-title">음성 육아 일기</h1>
+        </header>
+
+        <main class="app-content">
+            <div id="swipe-container" class="swipe-container">
+                <div id="swipe-wrapper" class="swipe-wrapper">
+                    
+                    <section id="tab-record" class="tab-section">
+                        <div id="record-history" style="flex: 1; overflow-y: auto; padding-right: 5px; margin-bottom: 10px;"></div>
+                        <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+                            <button id="download-btn" class="generate-btn" style="background-color: #4caf50; flex: 1; padding: 12px;">
+                                <i class="fas fa-download"></i> 일기장 텍스트로 내보내기
+                            </button>
+                        </div>
+                        <div class="voice-container">
+                            <button id="mic-btn" class="mic-btn"><i class="fas fa-microphone"></i></button>
+                            <p id="mic-status" style="margin-top: 10px; font-size: 13px; color: #666;">버튼을 눌러 기록하세요</p>
+                        </div>
+                    </section>
+
+                    <section id="tab-report" class="tab-section">
+                        <h2>이번 주 수면/수유 분석</h2>
+                        <div class="chart-placeholder">
+                            <div class="bar" style="height: 60%;"><span class="label">월</span></div>
+                            <div class="bar" style="height: 80%;"><span class="label">화</span></div>
+                            <div class="bar" style="height: 50%;"><span class="label">수</span></div>
+                            <div class="bar" style="height: 90%;"><span class="label">목</span></div>
+                        </div>
+                        <div class="ai-insight">
+                            <strong>💡 AI 인사이트:</strong> 수요일부터 수유량이 10% 증가하며 낮잠 시간이 안정화되었습니다.
+                        </div>
+                    </section>
+
+                    <section id="tab-storybook" class="tab-section">
+                        <h2>우리아이 성장 동화</h2>
+                        <div class="storybook-card">
+                            <div class="book-image">🎨 AI 이미지 프롬프트가 적용될 영역입니다.</div>
+                            <p class="book-text">최근 일기를 바탕으로 그림을 그려줍니다.</p>
+                            <button class="generate-btn" style="width: 100%;"><i class="fas fa-paint-brush"></i> 새 동화책 생성하기</button>
+                        </div>
+                    </section>
+
+                    <section id="tab-chat" class="tab-section">
+                        <div class="chat-box" id="chat-box">
+                            <div class="message ai">안녕하세요! 오늘 아이의 컨디션은 어떤가요?</div>
+                        </div>
+                        <div class="chat-input-area">
+                            <input type="text" id="chat-input" placeholder="예: 평소보다 자주 깨요">
+                            <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </section>
+
+                    <section id="tab-share" class="tab-section">
+                        <h2>맞춤형 소식 공유</h2>
+                        <div class="share-options">
+                            <button class="share-card">
+                                <i class="fas fa-user-friends"></i>
+                                <div>
+                                    <h3>조부모님용 요약</h3>
+                                    <p>따뜻한 소식으로 재구성</p>
+                                </div>
+                            </button>
+                            <button class="share-card">
+                                <i class="fas fa-heart"></i>
+                                <div>
+                                    <h3>배우자용 브리핑</h3>
+                                    <p>특이사항만 명확하게 요약</p>
+                                </div>
+                            </button>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </main>
+
+        <nav class="bottom-nav">
+            <button class="nav-item active" data-title="음성 육아 일기"><i class="fas fa-microphone"></i><span>기록</span></button>
+            <button class="nav-item" data-title="성장 리포트"><i class="fas fa-chart-bar"></i><span>리포트</span></button>
+            <button class="nav-item" data-title="성장 동화책"><i class="fas fa-book"></i><span>동화책</span></button>
+            <button class="nav-item" data-title="AI 육아 코치"><i class="fas fa-robot"></i><span>코치</span></button>
+            <button class="nav-item" data-title="맞춤 공유"><i class="fas fa-share-alt"></i><span>공유</span></button>
+        </nav>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

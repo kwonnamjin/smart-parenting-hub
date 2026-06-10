@@ -1,0 +1,62 @@
+﻿* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; }
+body { background-color: #f0f2f5; display: flex; justify-content: center; height: 100vh; }
+
+.app-container {
+    width: 100%; max-width: 400px; background-color: #ffffff; height: 100%; 
+    display: flex; flex-direction: column; position: relative; overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.app-header { background-color: #ff8c00; color: white; padding: 20px; text-align: center; z-index: 10; }
+.app-content { flex: 1; padding: 0; overflow: hidden; background-color: #f9f9f9; position: relative; }
+
+/* 🌟 스와이프 슬라이드 핵심 스타일 (touch-action 추가) */
+.swipe-container { width: 100%; height: 100%; overflow: hidden; touch-action: pan-y; }
+.swipe-wrapper { display: flex; width: 100%; height: 100%; transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+.tab-section { 
+    flex: 0 0 100%; width: 100%; height: 100%; padding: 20px; padding-bottom: 90px; 
+    overflow-y: auto; display: flex; flex-direction: column; 
+}
+
+/* 요소 스타일 */
+.voice-container { text-align: center; margin-top: auto; padding-top: 15px; border-top: 1px solid #eee; }
+.mic-btn { 
+    width: 70px; height: 70px; border-radius: 50%; background-color: #ff8c00; 
+    color: white; font-size: 30px; border: none; cursor: pointer; transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(255, 140, 0, 0.4); margin: 0 auto;
+}
+.mic-btn.recording { background-color: #e74c3c; animation: pulse 1s infinite; }
+.record-result { background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+.tags { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 5px; }
+.tag { background: #e0f7fa; color: #00838f; padding: 4px 8px; border-radius: 12px; font-size: 12px; }
+.generate-btn { padding: 10px; background: #ff8c00; color: white; border: none; border-radius: 5px; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 5px; font-weight: bold;}
+
+/* 차트, 동화책, 챗봇 등 */
+.chart-placeholder { height: 150px; display: flex; align-items: flex-end; justify-content: space-around; background: white; padding: 10px; border-radius: 10px; margin-bottom: 15px;}
+.bar { width: 30px; background-color: #4caf50; border-radius: 5px 5px 0 0; position: relative; display: flex; justify-content: center;}
+.bar .label { position: absolute; bottom: -20px; font-size: 12px; }
+.ai-insight { background: #fff3e0; padding: 15px; border-radius: 10px; font-size: 14px; border-left: 4px solid #ff9800; }
+.storybook-card { background: white; padding: 15px; border-radius: 10px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05);}
+.book-image { height: 220px; background: #e0e0e0; display: flex; align-items: center; justify-content: center; border-radius: 8px; margin-bottom: 15px; color: #757575; overflow: hidden;}
+.chat-box { flex: 1; background: white; padding: 10px; border-radius: 10px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px;}
+.message { max-width: 80%; padding: 10px 15px; border-radius: 15px; font-size: 14px;}
+.message.ai { background: #f0f0f0; align-self: flex-start; border-bottom-left-radius: 0; }
+.message.user { background: #ff8c00; color: white; align-self: flex-end; border-bottom-right-radius: 0; }
+.chat-input-area { display: flex; gap: 5px;}
+.chat-input-area input { flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 20px; outline: none; }
+.chat-input-area button { width: 45px; border-radius: 50%; background: #ff8c00; color: white; border: none; cursor: pointer; }
+.share-options { display: flex; flex-direction: column; gap: 10px; margin-top: 10px;}
+.share-card { display: flex; align-items: center; gap: 15px; background: white; padding: 15px; border: none; border-radius: 10px; cursor: pointer; text-align: left; box-shadow: 0 2px 5px rgba(0,0,0,0.05);}
+.share-card i { font-size: 24px; color: #ff8c00; }
+
+/* 네비게이션 바 */
+.bottom-nav { 
+    position: absolute; bottom: 0; width: 100%; height: 70px; background-color: white; 
+    display: flex; justify-content: space-around; align-items: center; border-top: 1px solid #eee; z-index: 10;
+}
+.nav-item { background: none; border: none; display: flex; flex-direction: column; align-items: center; gap: 5px; color: #bdc3c7; cursor: pointer; flex: 1; }
+.nav-item.active { color: #ff8c00; }
+.nav-item i { font-size: 20px; }
+.nav-item span { font-size: 10px; }
+
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
